@@ -38,9 +38,13 @@ ggplot(woa_sal, aes(x=salinity,y=ocean))+
 # Relationships between continuous variables ------------------------------
 
 # P7 Visualize the relationship between salinity and latitude by ocean basin.
-ggplot(woa_sal, aes(x=salinity,y=latitude,color=ocean))+
-  geom_boxplot()+
-  theme_bw()
+ggplot(woa_sal, aes(x=latitude,y=salinity,color=ocean))+
+  geom_point()+
+  theme_bw() +
+  theme(legend.position="inside",
+        legend.position.inside = c(0.50,0.01),
+        legend.justification = c(0.5,0.01))
+
 
 # P8 Edit your figure from P7 to improve its interpretability in at least one of
 # the following categories: visually differentiating the oceans, appropriateness
